@@ -1,0 +1,19 @@
+{
+  "name": "Dead Runner",
+  "short_name": "Dead Runner",
+  "description": "Temný les. Nekonečný běh.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#030806",
+  "theme_color": "#07100d",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
