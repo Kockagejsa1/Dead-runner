@@ -20,7 +20,7 @@ function mesh(vertices){let b=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,b)
 function cone(r,h,segments=9){let a=[];for(let i=0;i<segments;i++){let t=i*Math.PI*2/segments,u=(i+1)*Math.PI*2/segments,x=Math.cos(t),z=Math.sin(t),X=Math.cos(u),Z=Math.sin(u);let nx=x+.5,nz=z+.5; a.push(x*r,0,z*r,nx,.5,nz,X*r,0,Z*r,NX(X),.5,NZ(Z),0,h,0,0,1,0)}return mesh(a)}
 function NX(x){return x}function NZ(z){return z}
 function cylinder(r,h,segments=8){let a=[];for(let i=0;i<segments;i++){let t=i*Math.PI*2/segments,u=(i+1)*Math.PI*2/segments,x=Math.cos(t),z=Math.sin(t),X=Math.cos(u),Z=Math.sin(u);a.push(x*r,0,z*r,x,0,z,X*r,0,Z*r,X,0,Z,X*r,h,Z*r,X,0,Z,x*r,h,z*r,x,0,z,x*r,h,z*r,x,0,z,X*r,h,Z*r,X,0,Z)}return mesh(a)}
-function plane(){return mesh([-1,0,-1,0,1,0,1,0,-1,0,1,0,1,0,1,0,1,0,-1,0,1,0,1,0,-1,0,-1,0,1,0,0,1,0])}
+function plane(){return mesh([-1,0,-1,0,1,0,1,0,-1,0,1,0,1,0,1,0,1,0,-1,0,-1,0,1,0,1,0,1,0,1,0,-1,0,1,0,0,1,0,-1,0,-1,0,1,0])}
 const coneMesh=cone(.8,1.8),trunkMesh=cylinder(.16,1.8),ground=plane();
 function box(){return mesh([-1,0,-1,0,1,0,1,0,-1,0,1,0,1,0,1,0,1,0,-1,0,1,0,1,0,-1,0,-1,0,1,0,0,1,0])}
 let objects=[];for(let i=0;i<64;i++){let z=-5-i*1.5;objects.push({x:(i%2?1:-1)*(3.2+Math.random()*8),z,scale:.8+Math.random()*1.8,seed:Math.random(),obstacle:false})}
